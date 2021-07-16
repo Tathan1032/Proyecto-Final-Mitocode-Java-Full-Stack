@@ -1,6 +1,6 @@
 # Proyecto de Curso Mitocode Java Full Stack "MediappFrontend"
 
-En este proyecto se muestran los cambios realizados de acuerdo a la evaluación sugerida, donde se agrega el componente de Signos Vitales, junto con las funcionalidades solicitadas.
+En este proyecto se muestran los cambios realizados de acuerdo a la evaluación sugerida, donde se agrega el componente de Signos Vitales, junto con las funcionalidades solicitadas. En este branch se encuentra la parte correspondiente al Frontend en Angular.
 
 # MediappFrontend
 
