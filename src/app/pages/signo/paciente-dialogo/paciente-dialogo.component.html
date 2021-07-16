@@ -1,0 +1,33 @@
+<div>
+
+    <h1 mat-dialog-title>Nuevo Paciente</h1>
+
+    <mat-form-field>
+        <input matInput placeholder="Nombres" minlength="3" required [(ngModel)]="paciente.nombres">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Apellidos" required [(ngModel)]="paciente.apellidos">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Email" required type="email" [(ngModel)]="paciente.email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="DNI" required type="number" [(ngModel)]="paciente.dni">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Dirección" required [(ngModel)]="paciente.direccion">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Teléfono" required type="number" [(ngModel)]="paciente.telefono">
+    </mat-form-field>
+
+</div>
+
+<button mat-raised-button color="primary" (click)="operar()">Aceptar</button>
+
+<button mat-raised-button color="accent" (click)="cerrar()">Cancelar</button>

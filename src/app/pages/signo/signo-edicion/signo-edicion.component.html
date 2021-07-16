@@ -1,0 +1,49 @@
+<button class="btn-dialogo" mat-fab color="accent" [disabled]="edicion" (click)="abrirDialogo()" style="float: right; margin-right: 20px" >
+    <mat-icon>person_add</mat-icon>
+</button>
+
+<form class="example-container" [formGroup]="form" #frmSigno="ngForm" (ngSubmit)="operar()">
+
+    <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field>
+    </div>
+
+    <mat-form-field>
+        <mat-select placeholder="Paciente" [(value)]="pacienteSeleccionado" formControlName="pacienteActual"
+            (selectionChange)="seleccionarPaciente($event)">
+            <mat-option *ngFor="let p of pacientes" [value]="p">
+                {{p.nombres}} {{p.apellidos}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Escoge una fecha" [(ngModel)]="fechaSeleccionada"
+            [max]="maxFecha" formControlName="fecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Pulso" required formControlName="pulso" type="number">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Temperatura" required formControlName="temperatura" type="number">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Ritmo" required formControlName="ritmo" type="number">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmSigno.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" routerLink='/pages/signo' type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+</form>
